@@ -53,7 +53,7 @@ A system built on endless expansion cannot remain within ecological limits. It c
 
 ## What a Real Transition Demands
 
-A liveable future cannot emerge from corporate branding; it requires a shift in power. A genuine transition means bringing energy, water, land, and major industries under democratic control, ensuring production prioritises human need rather than profit and ecological limits are treated as binding. Communities affected by extraction must receive restitution and long-term repair.
+A liveable future cannot emerge from corporate branding; it requires a shift in power. A genuine transition means bringing energy, water, land, and major industries under democratic control, ensuring production prioritises human need rather than profit, and ecological limits are treated as binding. Communities affected by extraction must receive restitution and long-term repair.
 
 Reducing material demand is essential: durable design, repair culture, recycling, and extended product life reduce pressure on extraction zones whilst planned obsolescence is phased out and consumption in wealthier regions contracts.
 

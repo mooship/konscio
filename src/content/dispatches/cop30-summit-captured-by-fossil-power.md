@@ -29,7 +29,7 @@ This reflects how deeply integrated fossil firms remain in the economies and pol
 
 The fight inside COP30 was over a few words: whether the world would commit to phasing out fossil fuels; whether there would be a timeline; whether accountability would be real or symbolic. Science is clear. A rapid decline in fossil fuel use is the only path to a stable climate.
 
-But the fossil lobby and aligned states pushed to dilute the text. They promoted softer language about transitions, pathways, and technologies that might theoretically clean up emissions while allowing extraction to continue. They argued for terms like phase down. They pushed for references to abated fuels. They framed carbon capture and offsets as credible solutions. The final document absorbed this pressure, offering a broad call to transition without defining what must actually end.
+But the fossil lobby and aligned states pushed to dilute the text. They promoted softer language about transitions, pathways, and technologies that might theoretically clean up emissions whilst allowing extraction to continue. They argued for terms like phase down. They pushed for references to abated fuels. They framed carbon capture and offsets as credible solutions. The final document absorbed this pressure, offering a broad call to transition without defining what must actually end.
 
 The outcome protects the industry. It weakens the science. It leaves vulnerable regions exposed to deeper danger.
 
@@ -53,7 +53,7 @@ The hypocrisy is sharp. The same countries that demand climate discipline from t
 
 ---
 
-## The rise of industry friendly climate narratives
+## The rise of industry-friendly climate narratives
 
 The fossil lobby does not deny the crisis; it reframes it. It promotes carbon capture as a rescue tool despite limited scalability, brands hydrogen as clean even when produced from gas, champions offsets to justify continued pollution, and supports speculative future technologies that do not yet exist at scale. All of these narratives serve to protect extraction.
 

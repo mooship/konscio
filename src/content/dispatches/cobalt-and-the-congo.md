@@ -148,6 +148,6 @@ If the transition is measured only in tons of material and megawatts of capacity
 
 Congo is not a warehouse of minerals for the world. It is home to millions of people, to rivers, forests, and lives that deserve protection. A green future worth having must begin by confronting the political economy that turns human life into a raw material.
 
-To change course we need more than better reporting, more than cleaner branding, and more than technological fixes. We need collective politics that redistribute power, repair ecosystems, and reduce dependency on endless extraction. We need policies that treat ecological restoration as development, that make value stay closer to where it is created, and that centre the voices of people who have been asked to sacrifice for other peoples’ comforts.
+To change course we need more than better reporting, more than cleaner branding, and more than technological fixes. We need collective politics that redistribute power, repair ecosystems, and reduce dependency on endless extraction. We need policies that treat ecological restoration as development, that make value stay closer to where it is created, and that centre the voices of people who have been asked to sacrifice for other people’s comforts.
 
 If the world chooses a different path, then the tools of the transition can serve life rather than profit. If not, history will remember a green transition that repeated the same violences as the old one, only under a new name. The choice is political, and it is urgent.

@@ -169,7 +169,7 @@ describe("search.json", () => {
       {
         data: {
           title: "Future Post",
-          datePublished: new Date("2026-01-01"),
+          datePublished: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
           excerpt: "Future excerpt",
           draft: false,
         },

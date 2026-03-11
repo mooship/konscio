@@ -26,18 +26,6 @@ const currentYear = new Date().getFullYear();
           >Source Code on GitHub</a
         >
       </p>
-
-      <div class="bmc-button-wrapper">
-        <a
-          href="https://www.buymeacoffee.com/theredsoil"
-          target="_blank"
-          rel="noopener"
-          class="bmc-button"
-        >
-          <span class="coffee-emoji">☕</span>
-          Buy me a coffee
-        </a>
-      </div>
     </div>
 
     <SocialLinks />
@@ -99,42 +87,5 @@ const currentYear = new Date().getFullYear();
     .footer-info {
       order: 1;
     }
-  }
-
-  .bmc-button-wrapper {
-    margin-top: calc(var(--grid-unit) * 2);
-    display: flex;
-    align-items: flex-start;
-    max-width: 300px;
-  }
-
-  .bmc-button {
-    display: inline-flex;
-    align-items: center;
-    gap: calc(var(--grid-unit) / 2);
-    background-color: var(--color-accent);
-    color: var(--color-white);
-    padding: calc(var(--grid-unit) * 0.75) calc(var(--grid-unit) * 1.25);
-    border: 2px solid var(--color-border);
-    border-radius: calc(var(--grid-unit) * 0.75);
-    text-decoration: none;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-  }
-
-  .bmc-button:hover,
-  .bmc-button:focus {
-    background-color: var(--color-white);
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  .coffee-emoji {
-    color: #ffdd00;
-    font-size: 1.3em;
   }
 </style>

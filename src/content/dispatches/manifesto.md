@@ -19,7 +19,7 @@ This project is written from South Africa, in solidarity with everyone fighting 
 
 ## What This Site Stands For
 
-- Eco Socialism: Build a world where the economy sustains life instead of destroying it. Put collective ownership, equality, and ecological balance at the centre.
+- Eco-Socialism: Build a world where the economy sustains life instead of destroying it. Put collective ownership, equality, and ecological balance at the centre.
 - Decolonisation: Dismantle the political, cultural, and economic power structures inherited from empire. Create new ways of living beyond colonial modernity.
 - Global Solidarity: Connect the struggles of the South and the North. Liberation anywhere relies on justice everywhere.
 - Structural Analysis: Name the root causes, not the symptoms. Oppression and ecological collapse are systemic, not accidental.
