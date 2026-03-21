@@ -16,7 +16,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.7",
     "@astrojs/compiler-rs": "^0.1.4",
-    "@astrojs/mdx": "^5.0.0",
+    "@astrojs/mdx": "^5.0.2",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
     "astro": "^6.0.8",
