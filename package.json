@@ -19,7 +19,7 @@
     "@astrojs/mdx": "^5.0.0",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
-    "astro": "^6.0.4",
+    "astro": "^6.0.8",
     "happy-dom": "^20.8.4",
     "link-check": "^5.5.1",
     "mdast-util-to-string": "^4.0.0",
