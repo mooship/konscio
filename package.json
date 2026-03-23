@@ -14,7 +14,7 @@
     "test": "vitest --run"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.7",
+    "@astrojs/check": "^0.9.8",
     "@astrojs/compiler-rs": "^0.1.4",
     "@astrojs/mdx": "^5.0.0",
     "@astrojs/rss": "^4.0.17",
