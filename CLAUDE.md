@@ -27,6 +27,10 @@ Run a single test file:
 npx vitest run tests/utils/slugify.test.ts
 ```
 
+## Safety
+
+- **Never deploy to production without explicit permission from the user.** Always ask first and wait for confirmation.
+
 ## Architecture
 
 ### Content Flow
@@ -71,3 +75,9 @@ Tests live in `tests/utils/` and cover utility functions only (no component test
 ### Site Config
 
 Central config (site URL, author, social links) lives in `src/config.ts` and is imported across pages and components.
+
+## Code style
+
+- **No inline comments** — never use trailing `//` comments on the same line as code. JSDoc block comments (`/** */`) are fine where genuinely useful.
+- Prettier enforces: double quotes, semicolons, 100-char width
+- ESLint uses flat config with TypeScript, Astro, Unicorn, and Prettier integration
