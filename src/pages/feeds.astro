@@ -1,0 +1,226 @@
+---
+import Layout from "../components/Layout.astro";
+import { config } from "../config";
+
+const base = Astro.site ? config.baseUrl : "";
+---
+
+<Layout
+  title={`Subscribe | ${config.title}`}
+  description="Subscribe to The Red Soil via RSS, Atom, or JSON Feed"
+  showSidebar={false}
+>
+  <div class="feeds-page">
+    <header class="page-header">
+      <h1 class="page-title">Subscribe</h1>
+      <hr class="page-rule" />
+    </header>
+
+    <p class="feeds-intro">
+      Follow {config.title} in your preferred feed reader. Choose a format below.
+    </p>
+
+    <div class="feed-options">
+      <a href={base + "rss.xml"} class="feed-card">
+        <svg
+          class="feed-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <circle cx="5" cy="19" r="2" fill="currentColor"></circle>
+          <path d="M3 3v2c8.284 0 15 6.716 15 15h2c0-9.389-7.611-17-17-17z" fill="currentColor"
+          ></path>
+          <path d="M3 9v2c4.963 0 9 4.037 9 9h2c0-6.065-4.935-11-11-11z" fill="currentColor"></path>
+        </svg>
+        <h2 class="feed-name">RSS</h2>
+        <p class="feed-description">The classic format. Works with virtually every feed reader.</p>
+        <span class="feed-url">rss.xml</span>
+      </a>
+
+      <a href={base + "atom.xml"} class="feed-card">
+        <svg
+          class="feed-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="10"
+            ry="4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            fill="none"
+            transform="rotate(30 12 12)"></ellipse>
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="10"
+            ry="4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            fill="none"
+            transform="rotate(-30 12 12)"></ellipse>
+          <ellipse
+            cx="12"
+            cy="12"
+            rx="10"
+            ry="4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            fill="none"
+            transform="rotate(90 12 12)"></ellipse>
+        </svg>
+        <h2 class="feed-name">Atom</h2>
+        <p class="feed-description">
+          A modern standard with richer metadata. Preferred by many readers.
+        </p>
+        <span class="feed-url">atom.xml</span>
+      </a>
+
+      <a href={base + "feed.json"} class="feed-card">
+        <svg
+          class="feed-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 3h2v2H5v4c0 1.1-.9 2-2 2 1.1 0 2 .9 2 2v4h2v2H5c-1.1 0-2-.9-2-2v-3c0-1.1-.9-2-2-2v-2c1.1 0 2-.9 2-2V5c0-1.1.9-2 2-2z"
+            fill="currentColor"></path>
+          <path
+            d="M19 3h-2v2h2v4c0 1.1.9 2 2 2-1.1 0-2 .9-2 2v4h-2v2h2c1.1 0 2-.9 2-2v-3c0-1.1.9-2 2-2v-2c-1.1 0-2-.9-2-2V5c0-1.1-.9-2-2-2z"
+            fill="currentColor"></path>
+          <circle cx="8" cy="12" r="1" fill="currentColor"></circle>
+          <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+          <circle cx="16" cy="12" r="1" fill="currentColor"></circle>
+        </svg>
+        <h2 class="feed-name">JSON Feed</h2>
+        <p class="feed-description">A developer-friendly format built on JSON instead of XML.</p>
+        <span class="feed-url">feed.json</span>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .feeds-page {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: calc(var(--grid-unit) * 6);
+  }
+
+  .page-title {
+    font-family: var(--font-heading-primary);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    line-height: 1.1;
+    margin-bottom: calc(var(--grid-unit) * 4);
+  }
+
+  .page-rule {
+    height: 4px;
+    background-color: var(--color-accent);
+    border: none;
+    width: 120px;
+    margin: 0 auto;
+  }
+
+  .feeds-intro {
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: calc(var(--grid-unit) * 6);
+  }
+
+  .feed-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--grid-unit) * 3);
+  }
+
+  .feed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: calc(var(--grid-unit) * 4) calc(var(--grid-unit) * 3);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: calc(var(--grid-unit));
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .feed-card:hover,
+  .feed-card:focus {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    outline: none;
+  }
+
+  .feed-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-accent);
+    margin-bottom: calc(var(--grid-unit) * 2);
+  }
+
+  .feed-name {
+    font-family: var(--font-heading-secondary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: calc(var(--grid-unit));
+  }
+
+  .feed-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    margin-bottom: calc(var(--grid-unit) * 2);
+    flex: 1;
+  }
+
+  .feed-url {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    background-color: var(--color-background);
+    padding: calc(var(--grid-unit) * 0.5) calc(var(--grid-unit));
+    border-radius: calc(var(--grid-unit) * 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2.5rem;
+    }
+
+    .feed-options {
+      grid-template-columns: 1fr;
+      gap: calc(var(--grid-unit) * 2);
+    }
+
+    .feed-card {
+      padding: calc(var(--grid-unit) * 3);
+    }
+  }
+</style>

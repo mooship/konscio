@@ -59,7 +59,7 @@ const base = Astro.site ? config.baseUrl : "";
       <HeaderNavigation base={base} />
 
       <div class="mobile-controls">
-        <a href={base + "rss.xml"} data-astro-prefetch class="rss-toggle" title="RSS Feed">
+        <a href={base + "feeds"} data-astro-prefetch class="rss-toggle" title="Subscribe">
           <svg
             width="24"
             height="24"
@@ -74,7 +74,7 @@ const base = Astro.site ? config.baseUrl : "";
             <path d="M3 9v2c4.963 0 9 4.037 9 9h2c0-6.065-4.935-11-11-11z" fill="currentColor"
             ></path>
           </svg>
-          <span class="visually-hidden">RSS</span>
+          <span class="visually-hidden">Subscribe</span>
         </a>
 
         <button class="search-toggle" id="search-toggle" aria-label="Search articles">

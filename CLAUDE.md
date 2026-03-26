@@ -35,7 +35,7 @@ npx vitest run tests/utils/slugify.test.ts
 2. Frontmatter is validated against the Zod schema in `src/schemas/dispatches.ts`
 3. The collection is defined in `src/content.config.ts`
 4. Pages use `getStaticPaths()` with `import.meta.glob()` to generate all routes
-5. RSS (`/rss.xml`) and search index (`/search.json`) are generated from the same collection
+5. Feeds (RSS `/rss.xml`, Atom `/atom.xml`, JSON Feed `/feed.json`) and search index (`/search.json`) are generated from the same collection. Shared post-processing logic lives in `src/utils/feed.ts`
 
 ### Article Frontmatter
 
@@ -53,6 +53,7 @@ Draft posts and future-dated posts are excluded from all listings automatically.
 
 - `/dispatches/[...slug]` — dynamic catch-all for article URLs
 - `/categories/[category]` — per-category listing pages
+- `/feeds` — feed format picker (RSS, Atom, JSON Feed)
 - Slug is derived from the filename (without extension) via `src/utils/slugify.ts`
 
 ### Styling

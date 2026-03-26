@@ -13,7 +13,7 @@ An Astro-powered publication exploring capitalism, colonialism, and climate coll
 - Markdown and MDX content support
 - Reading time estimates and table of contents support
 - Responsive layout with accessibility-focused markup
-- SEO metadata support and RSS generation
+- SEO metadata support and feed generation (RSS, Atom, JSON Feed)
 - Built-in search with JSON index
 - Category pages for content organization
 
