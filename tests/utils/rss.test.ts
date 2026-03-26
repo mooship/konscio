@@ -1,19 +1,46 @@
 import rss from "@astrojs/rss";
+import type { APIContext } from "astro";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { GET } from "../../src/pages/rss.xml.ts";
-import { createContext, mockConfig, mockFeedItems } from "./fixtures/feed-mocks";
+
+const mockFeedItems = [
+  {
+    title: "First Post",
+    pubDate: new Date("2025-03-01"),
+    description: "First excerpt",
+    content: "<p>Full first content</p>",
+    link: "/dispatches/first-post",
+  },
+  {
+    title: "Second Post",
+    pubDate: new Date("2025-02-01"),
+    description: "Second excerpt",
+    content: "<p>Full second content</p>",
+    link: "/dispatches/second-post",
+  },
+];
 
 vi.mock("@astrojs/rss", () => ({
   default: vi.fn(() => ({ status: 200, body: "rss content" })),
 }));
 
-vi.mock("../../src/config", () => ({ config: mockConfig }));
+vi.mock("../../src/config", () => ({
+  config: {
+    title: "Test Site",
+    description: "Test Description",
+    siteUrl: "https://theredsoil.co.za",
+    baseUrl: "/",
+  },
+}));
 
 vi.mock("../../src/utils/feed", () => ({
-  getFeedItems: () => mockFeedItems,
+  getFeedItems: async () => mockFeedItems,
   resolveSiteUrl: (ctx: any) =>
-    ctx.site ? new URL(ctx.site).toString().replace(/\/$/, "") : "http://localhost",
+    ctx.site ? new URL(ctx.site).toString().replace(/\/$/, "") : "https://theredsoil.co.za",
 }));
+
+const createContext = (site?: string): APIContext =>
+  ({ site: site ? new URL(site) : undefined }) as unknown as APIContext;
 
 describe("rss.xml", () => {
   beforeEach(() => {

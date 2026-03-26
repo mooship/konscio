@@ -1,14 +1,41 @@
+import type { APIContext } from "astro";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { GET } from "../../src/pages/feed.json.ts";
-import { createContext, mockConfig, mockFeedItems } from "./fixtures/feed-mocks";
 
-vi.mock("../../src/config", () => ({ config: mockConfig }));
+const mockFeedItems = [
+  {
+    title: "First Post",
+    pubDate: new Date("2025-03-01"),
+    description: "First excerpt",
+    content: "<p>Full first content</p>",
+    link: "/dispatches/first-post",
+  },
+  {
+    title: "Second Post",
+    pubDate: new Date("2025-02-01"),
+    description: "Second excerpt",
+    content: "<p>Full second content</p>",
+    link: "/dispatches/second-post",
+  },
+];
+
+vi.mock("../../src/config", () => ({
+  config: {
+    title: "Test Site",
+    description: "Test Description",
+    author: { name: "Test Author", bio: "Test Bio" },
+    baseUrl: "/",
+  },
+}));
 
 vi.mock("../../src/utils/feed", () => ({
-  getFeedItems: () => mockFeedItems,
+  getFeedItems: async () => mockFeedItems,
   resolveSiteUrl: (ctx: any) =>
-    ctx.site ? new URL(ctx.site).toString().replace(/\/$/, "") : "http://localhost",
+    ctx.site ? new URL(ctx.site).toString().replace(/\/$/, "") : "https://theredsoil.co.za",
 }));
+
+const createContext = (site?: string): APIContext =>
+  ({ site: site ? new URL(site) : undefined }) as unknown as APIContext;
 
 describe("feed.json", () => {
   beforeEach(() => {
@@ -76,7 +103,7 @@ describe("feed.json", () => {
     const response = await GET(context);
     const feed = await response.json();
 
-    expect(feed.home_page_url).toBe("http://localhost/");
-    expect(feed.feed_url).toBe("http://localhost/feed.json");
+    expect(feed.home_page_url).toBe("https://theredsoil.co.za/");
+    expect(feed.feed_url).toBe("https://theredsoil.co.za/feed.json");
   });
 });

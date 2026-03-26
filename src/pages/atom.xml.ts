@@ -4,7 +4,7 @@ import { escapeXml, getFeedItems, resolveSiteUrl } from "../utils/feed";
 import { withBase } from "../utils/url";
 
 export const GET: APIRoute = async (context) => {
-  const items = getFeedItems();
+  const items = await getFeedItems();
   const siteUrl = resolveSiteUrl(context);
   const updated = items.length > 0 ? items[0].pubDate.toISOString() : new Date().toISOString();
   const selfUrl = `${siteUrl}${withBase("atom.xml")}`;

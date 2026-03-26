@@ -1,4 +1,5 @@
 import type { APIContext } from "astro";
+import { config } from "../config";
 import { slugifyPath } from "./slugify";
 import { withBase } from "./url";
 
@@ -20,7 +21,7 @@ interface PostFrontmatter {
 
 interface PostModule {
   frontmatter: PostFrontmatter;
-  compiledContent?: () => string;
+  compiledContent?: () => string | Promise<string>;
 }
 
 function isValidDate(date: Date): boolean {
@@ -37,10 +38,13 @@ export function escapeXml(str: string): string {
 }
 
 export function resolveSiteUrl(context: APIContext): string {
-  return context.site ? new URL(context.site).toString().replace(/\/$/, "") : "http://localhost";
+  if (context.site) {
+    return new URL(context.site).toString().replace(/\/$/, "");
+  }
+  return config.siteUrl.replace(/\/$/, "");
 }
 
-export function processPost(path: string, post: unknown): FeedItem | null {
+export async function processPost(path: string, post: unknown): Promise<FeedItem | null> {
   if (!post || typeof post !== "object") {
     return null;
   }
@@ -62,7 +66,7 @@ export function processPost(path: string, post: unknown): FeedItem | null {
   }
 
   const slug = slugifyPath(path);
-  const content = postData.compiledContent?.() || undefined;
+  const content = (await postData.compiledContent?.()) || undefined;
 
   return {
     title: title || "Untitled",
@@ -73,11 +77,14 @@ export function processPost(path: string, post: unknown): FeedItem | null {
   };
 }
 
-export function getFeedItems(): FeedItem[] {
+export async function getFeedItems(): Promise<FeedItem[]> {
   const posts = import.meta.glob<PostModule>("../content/dispatches/*.{md,mdx}", { eager: true });
 
-  return Object.entries(posts)
-    .map(([path, post]) => processPost(path, post))
+  const items = await Promise.all(
+    Object.entries(posts).map(([path, post]) => processPost(path, post))
+  );
+
+  return items
     .filter((item): item is FeedItem => item !== null)
     .toSorted((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 }

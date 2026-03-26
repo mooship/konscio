@@ -4,7 +4,7 @@ import { getFeedItems, resolveSiteUrl } from "../utils/feed";
 import { withBase } from "../utils/url";
 
 export const GET: APIRoute = async (context) => {
-  const items = getFeedItems();
+  const items = await getFeedItems();
   const siteUrl = resolveSiteUrl(context);
 
   const feed = {
