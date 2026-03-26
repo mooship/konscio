@@ -60,7 +60,6 @@ describe("atom.xml", () => {
     const response = await GET(context);
     const body = await response.text();
 
-    // Should not contain unescaped ampersands in text content (outside of XML structure)
     expect(body).not.toMatch(/ & /);
   });
 

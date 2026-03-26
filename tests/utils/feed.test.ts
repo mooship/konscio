@@ -32,7 +32,6 @@ describe("getFeedItems", () => {
 
   it("should not include draft posts", () => {
     const items = getFeedItems();
-    // All returned items should have valid titles (drafts are filtered)
     for (const item of items) {
       expect(item.title).toBeTruthy();
     }
