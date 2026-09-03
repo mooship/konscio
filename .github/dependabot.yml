@@ -3,29 +3,16 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "monthly"
-      day: "saturday"
-      time: "09:00"
-      timezone: "Africa/Johannesburg"
+      interval: "quarterly"
     groups:
-      production-dependencies:
-        dependency-type: "production"
-        update-types:
-          - "minor"
-          - "patch"
-      development-dependencies:
-        dependency-type: "development"
-        update-types:
-          - "minor"
-          - "patch"
+      all-dependencies:
+        patterns:
+          - "*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
-      day: "saturday"
-      time: "09:00"
-      timezone: "Africa/Johannesburg"
+      interval: "quarterly"
     groups:
-      github-actions:
+      all-actions:
         patterns:
           - "*"
